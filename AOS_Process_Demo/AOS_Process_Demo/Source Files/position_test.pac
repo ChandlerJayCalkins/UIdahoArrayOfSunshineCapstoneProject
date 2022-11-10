@@ -1,0 +1,12 @@
+'!TITLE "<Title>"
+PROGRAM position_test
+TAKEARM
+
+P1 = (142.343, 771.92, 371.85, -58.56, -31.87, -47.78) 'PUSH ASSEMBLY 3
+j00 = (14.98, -3.33, 157.34, 19.81, -79.74, 231.33)
+MOVE P, @P J00
+MOVE L, @E P1
+
+GIVEARM
+
+END

@@ -1,0 +1,37 @@
+'!TITLE "<Title>"
+PROGRAM lab2b
+
+
+TAKEARM
+
+DEFINT li1 = 200
+DEFINT li2
+
+j00 = (0.00, -6.53, 155.37, 0.00, -60.54, 90)
+MOVE P, j00
+
+FOR li2 = 0 TO 3
+
+P1 = (0,500,80,180,0,180)
+P2 = (400,600-(li1),80,180,0,180)
+
+	APPROACH P, P1, @P 30
+	MOVE P, P1
+	DEPART P, @P 30
+
+	DELAY 1000
+
+	APPROACH P, P2, @P 30
+	MOVE P, P2
+	DEPART P, @P 30
+
+	DELAY 1000
+
+	li1 = li1 + 200
+
+NEXT
+
+GIVEARM
+
+
+END
