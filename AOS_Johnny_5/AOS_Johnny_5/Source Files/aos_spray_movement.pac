@@ -48,38 +48,9 @@ MOVE P, @0 q9
 MOVE P, @0 q10
 MOVE P, @0 q11
 MOVE P, @0 q12
-'MOVE P, @0 pickup_hover
-'SPEED 20
-'MOVE P, @0 placement_hover
-'SPEED 10
-'MOVE P, @0 drop1_hover
-'SPEED 5
-'MOVE P, @0 drop1
-'DELAY 4000
-'MOVE P, @0 drop1_touch
-'DELAY 4000
-'MOVE P, @0 drop1_hover
-'SPEED 20
-'MOVE P, @0 pickup_hover2
-'MOVE P, @0 pickup_hover
-'SPEED 5
-'MOVE P, @0 pickup
-'MOVE P, @0 pickup_hover
-'SPEED 20
-'MOVE P, @0 placement_hover
-'SPEED 20
-'MOVE P, @0 drop2_hover
-'SPEED 5
-'MOVE P, @0 drop2
-'DELAY 4000
-'MOVE P, @0 drop2_touch
-'DELAY 4000
-'MOVE P, @0 drop2_hover
-'SPEED 20
-'MOVE P, @0 pickup_hover2
 
 DELAY 2000
-MOVE P, @0 rest
+'MOVE P, @0 rest
 GOHOME
 
 
