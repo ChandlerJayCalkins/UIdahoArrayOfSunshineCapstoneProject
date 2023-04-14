@@ -18,27 +18,27 @@ SPEED 20
 
 'MOVE P, @0 rest
 
-DEFINT flg
-com_state #9,flg
-IF flg=-1 THEN
-	com_encom #9
-	MOVE P, @0 conn
-ENDIF
-com_state #9,flg
-IF flg=-1 THEN
-	MOVE P, @0 finish
-	HALT "Connection failed"
-ENDIF
+'DEFINT flg
+'com_state #8,flg
+'IF flg=-1 THEN
+'	com_encom #8
+'	MOVE P, @0 conn
+'ENDIF
+'com_state #4,flg
+'IF flg=-1 THEN
+'	MOVE P, @0 finish
+'	HALT "Connection failed"
+'ENDIF
 
-FLUSH #9
-INPUT #9,S10
+FLUSH #7
+INPUT #7,S10
 IF S10=":)" THEN
 	MOVE P, @0 aha
 ELSE
 	MOVE P, @0 boohoo
 ENDIF
 
-com_discom #9
+'com_discom #8
 
 MOVE P, @0 finish
 

@@ -15,27 +15,24 @@ finish = J2P((0.0, -61.0, 159.69, 0.0, 0.01, 85.51))
 MOVE P, @0 rest
 
 DEFINT flg
-com_state #8,flg
+com_state #9,flg
 IF flg=-1 THEN
-	com_encom #8
+	com_encom #9
 	MOVE P, @0 conn
 ENDIF
-com_state #8,flg
+com_state #9,flg
 IF flg=-1 THEN
 	MOVE P, @0 finish
 	HALT "Connection failed"
 ENDIF
 
-FLUSH #8
+FLUSH #9
 
 S10 = ":)"
-PRINT #8,S10
-DELAY 2000
-PRINT #8,S10
-DELAY 2000
+PRINT #9,S10
 MOVE P, @0 finish
 
-com_discom #8
+com_discom #9
 GIVEARM
 
 END

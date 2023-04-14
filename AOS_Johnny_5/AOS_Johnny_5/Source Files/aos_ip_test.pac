@@ -20,19 +20,20 @@ IF flg=-1 THEN
 	com_encom #8
 	MOVE P, @0 conn
 ENDIF
-com_state #8,flg
-IF flg=-1 THEN
-	MOVE P, @0 finish
-	HALT "Connection failed"
-ENDIF
+'com_state #8,flg
+'IF flg=-1 THEN
+'	MOVE P, @0 finish
+'	HALT "Connection failed"
+'ENDIF
 
 FLUSH #8
 
 S10 = ":)"
 PRINT #8,S10
-DELAY 2000
+DELAY 10000
 PRINT #8,S10
-DELAY 2000
+DELAY 5000
+PRINT #8,S10
 MOVE P, @0 finish
 
 com_discom #8
