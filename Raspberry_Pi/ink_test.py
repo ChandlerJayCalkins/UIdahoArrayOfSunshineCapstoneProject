@@ -23,7 +23,7 @@ try:
 	#
 	############################################################
 	
-		# define ip address and port number of raspberry pi servers in a tuple
+	# define ip address and port number of raspberry pi servers in a tuple
 	host = "192.168.0.100"
 	johnny5_port = 5001
 	johnny5_server_addr = (host, johnny5_port)
@@ -101,6 +101,8 @@ try:
 	# activate ink applier
 	gpio.output(pin_ink_driver, gpio.HIGH)
 	gpio.output(pin_ink_forward, gpio.HIGH)
+	print(f"Activating pin {pin_ink_driver}...")
+	print(f"Activating pin {pin_ink_forward}..")
 		
 	# get opening message from johnny5
 	msg = getMsg(johnny5_conn).decode("utf-8")
@@ -110,6 +112,8 @@ try:
 	# reverse ink applier for a bit
 	gpio.output(pin_ink_forward, gpio.LOW)
 	gpio.output(pin_ink_reverse, gpio.HIGH)
+	print(f"Deactivating pin {pin_ink_forward}...")
+	print(f"Activating pin {pin_ink_reverse}...")
 		
 	# get opening message from johnny5
 	msg = getMsg(johnny5_conn).decode("utf-8")
@@ -119,6 +123,8 @@ try:
 	# reverse ink applier for a bit
 	gpio.output(pin_ink_reverse, gpio.LOW)
 	gpio.output(pin_ink_driver, gpio.LOW)
+	print(f"Deactivating pin {pin_ink_reverse}...")
+	print(f"Deactivating pin {pin_ink_driver}...")
 
 	############################################################
 	#
