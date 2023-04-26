@@ -52,6 +52,8 @@ FLUSH #9
 S10 = ":)"
 PRINT #9,S10
 
+DELAY 50000
+
 HOME workstart
 
 SPEED 20

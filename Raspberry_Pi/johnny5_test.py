@@ -150,8 +150,8 @@ try:
 	gpio.output(pin_ink_reverse, gpio.LOW)
 	print("Turning off ink applier...")
 
-	# forward and reverse 18 more times
-	for i in range(18):
+	# forward and reverse 21 more times
+	for i in range(21):
 		# get message from johnny 5
 		msg = getMsg(johnny5_conn).decode("utf-8")
 		# print message from johnny 5

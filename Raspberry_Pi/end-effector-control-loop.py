@@ -169,15 +169,44 @@ while True:
 		#
 		############################################################
 
-		# forward and reverse 23 times
-		for i in range(23):
+		# get message from johnny 5
+		msg = getMsg(johnny5_conn).decode("utf-8")
+		# print message from johnny 5
+		printMsg("Johnny 5", johnny5_addr, msg)
+
+		# activate ink applier driver and make it go forward
+		gpio.output(pin_ink_driver, gpio.HIGH)
+		gpio.output(pin_ink_forward, gpio.HIGH)
+		print("Turning on ink driver...")
+		print("Making ink applier go forward...")
+		
+		# get message from johnny 5
+		msg = getMsg(johnny5_conn).decode("utf-8")
+		# print message from johnny 5
+		printMsg("Johnny 5", johnny5_addr, msg)
+
+		# make ink applier go in reverse
+		gpio.output(pin_ink_forward, gpio.LOW)
+		gpio.output(pin_ink_reverse, gpio.HIGH)
+		print("Making ink applier go in reverse...")
+
+		# get message from johnny 5
+		msg = getMsg(johnny5_conn).decode("utf-8")
+		# print message from johnny 5
+		printMsg("Johnny 5", johnny5_addr, msg)
+
+		# turn off ink applier
+		gpio.output(pin_ink_reverse, gpio.LOW)
+		print("Turning off ink applier...")
+
+		# forward and reverse 21 more times
+		for i in range(21):
 			# get message from johnny 5
 			msg = getMsg(johnny5_conn).decode("utf-8")
 			# print message from johnny 5
 			printMsg("Johnny 5", johnny5_addr, msg)
 
 			# activate ink applier driver and make it go forward
-			gpio.output(pin_ink_driver, gpio.HIGH)
 			gpio.output(pin_ink_forward, gpio.HIGH)
 			print("Making ink applier go forward...")
 
@@ -198,8 +227,37 @@ while True:
 
 			# turn off ink applier
 			gpio.output(pin_ink_reverse, gpio.LOW)
-			gpio.output(pin_ink_driver, gpio.LOW)
 			print("Turning off ink applier...")
+		
+		# get message from johnny 5
+		msg = getMsg(johnny5_conn).decode("utf-8")
+		# print message from johnny 5
+		printMsg("Johnny 5", johnny5_addr, msg)
+
+		# activate ink applier driver and make it go forward
+		gpio.output(pin_ink_forward, gpio.HIGH)
+		print("Making ink applier go forward...")
+		
+		# get message from johnny 5
+		msg = getMsg(johnny5_conn).decode("utf-8")
+		# print message from johnny 5
+		printMsg("Johnny 5", johnny5_addr, msg)
+
+		# make ink applier go in reverse
+		gpio.output(pin_ink_forward, gpio.LOW)
+		gpio.output(pin_ink_reverse, gpio.HIGH)
+		print("Making ink applier go in reverse...")
+
+		# get message from johnny 5
+		msg = getMsg(johnny5_conn).decode("utf-8")
+		# print message from johnny 5
+		printMsg("Johnny 5", johnny5_addr, msg)
+
+		# turn off ink applier
+		gpio.output(pin_ink_reverse, gpio.LOW)
+		gpio.output(pin_ink_driver, gpio.LOW)
+		print("Turning off ink applier...")
+		print("Turning off ink driver...")
 
 		############################################################
 		#
